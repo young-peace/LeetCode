@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lengthOfLastWord = function(s) {
+            let index=s.length-1;
+            while(s[index]===' '){
+                index--;
+            }
+            let slength=0;
+            while(index>=0 && s[index]!==' '){
+                slength++;
+                index--;
+            }
+            return slength;
+        };
+        let s='hello world '
+        lengthOfLastWord(s)
+    </script>
+</body>
+</html>
