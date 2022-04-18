@@ -1,12 +1,15 @@
 var longestPalindrome = function(s) {
     const map = new Map();
-    for(let i = 0; i < s.length; i++){
-        map.set(s[i], (map.get(s[i]) || 0) + 1);
+    let arr=s.split("")
+    let count=0
+    for(let a of arr){
+        if(map.has(a)){
+            map.delete(a)
+            count+=2
+        }else{
+            map.set(a)
+        }
     }
-    let result = 0;
-    for(let value of map.values()){
-        result += Math.floor(value / 2) * 2;
-    }
-    return result !== s.length ? result + 1 : result;
+    return count+(map.size?0:1)
 };
 console.log(longestPalindrome("abccccdd"))
