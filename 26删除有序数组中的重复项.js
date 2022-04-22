@@ -13,6 +13,7 @@ var removeDuplicates = function (nums) {
     for (let i = 1; i < nums.length; i++) { 
         if (nums[i] !== nums[j]) { 
             j++;
+            // 慢指针才是实际对数组做操作的，快指针只是在遍历
             nums[j] = nums[i];
         }
     }
