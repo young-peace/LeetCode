@@ -9,15 +9,16 @@
 
 var plusOne = function (digits) {
     let n = digits.length;
-    for (let i = n - 1; i > 0; i++) { 
+    for (let i = n - 1; i >= 0; i--) { 
         // 逆序寻找第一个不为9的数字
         if (digits[i] !== 9) { 
             ++digits[i];
             for (let j = i+1; j <n; j++) { 
                 digits[j] = 0;
             }
+            return digits
         }
-        return digits
+       
     }
     // digital中的元素都为9
     const ans = new Array(n + 1).fill(0)
