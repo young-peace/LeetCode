@@ -25,6 +25,7 @@ function ListNode(val, next) {
      }
 
 }; */
+// 官方题解：递归
 var mergeTwoLists = function(l1, l2) {
     if(l1 === null){
         return l2;
@@ -39,5 +40,22 @@ var mergeTwoLists = function(l1, l2) {
         l2.next = mergeTwoLists(l1, l2.next);
         return l2;
     }
+};
+// 迭代
+var mergeTwoLists = function(l1, l2) {
+    const prehead = new ListNode(-1);
+    let pre = prehead;
+    while (l1 !== null && l2 !== null) { 
+        if (l1.val <= l2.val) {
+            pre.next = l1;
+            l1 = l1.next;
+        } else { 
+            pre.next = l2;
+            l2 = l2.next;
+        }
+        pre = pre.next;
+    }
+    pre.next = l1 === null ? l2 : l1;
+    return prehead.next;
 };
 console.log(mergeTwoLists([1,2,4],[1,3,4]))
