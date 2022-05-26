@@ -2,7 +2,19 @@
 判断底层每棵子树是不是平衡树，如果平衡，使用它们的高度判断父节点是否平衡，并计算父节点的高度
 如果不平衡，返回-1
  */
-var isBalanced = function (root) {
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isBalanced = function(root) {
     return balanced(root) !== -1;
 };
 var balanced = function (node) { 
